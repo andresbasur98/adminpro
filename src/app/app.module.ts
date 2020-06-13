@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
+//Servicios
+// import { SettingsService } from './services/settings/settings.service'; cuando no estaban centralizados los servicios en un módulo
+import { ServiceModule } from './services/service.module';
 
 
 //Rutas
@@ -28,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
