@@ -7,6 +7,9 @@ import { NopagefoudComponent } from './nopagefoud/nopagefoud.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+// Pipes
+import { PipesModule } from '../pipes/pipes.module';
+
 @NgModule({
     declarations:[
         BreadcrumsComponent,
@@ -22,7 +25,8 @@ import { CommonModule } from '@angular/common';
     ],
     imports:[
         RouterModule, //Hay que importarlo para que se navegue correctamente entre los componentes que se encuentran aqui
-        CommonModule //Es necesario para poder hacer funciones como *ngIf, *ngFor, pipes, etc
+        CommonModule, //Es necesario para poder hacer funciones como *ngIf, *ngFor, pipes, etc
+        PipesModule
     ]
 })
 export class SharedModule{}
