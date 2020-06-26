@@ -16,7 +16,7 @@ export class SubirArchivoService {
 
         formData.append( 'imagen', archivo, archivo.name); // Le indicamos el archivo que queremos subir
         xhr.onreadystatechange = () =>{
-          if( xhr.readyState == 4 ){
+          if( xhr.readyState == 4 ){ // Cuando ha terminado el proceso
             if( xhr.status == 200){
               console.log('Imagen subida');
               resolve( JSON.parse(xhr.response));
