@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
 import { HospitalService } from './hospital/hospital.service';
 import { AdminGuard } from './guards/admin.guard';
+import { VerificaTokenGuard } from './guards/verifica-token.guard';
 
 
 
@@ -34,7 +35,8 @@ import { AdminGuard } from './guards/admin.guard';
     SubirArchivoService,
     ModalUploadService,
     HospitalService,
-    MedicoService
+    MedicoService,
+    VerificaTokenGuard
   ]
 })
 export class ServiceModule { }

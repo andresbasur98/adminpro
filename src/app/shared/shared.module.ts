@@ -9,19 +9,22 @@ import { CommonModule } from '@angular/common';
 
 // Pipes
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 @NgModule({
     declarations:[
         BreadcrumsComponent,
         HeaderComponent,
         SidebarComponent,
-        NopagefoudComponent
+        NopagefoudComponent,
+        ModalUploadComponent
     ],
     exports:[
         BreadcrumsComponent,
         HeaderComponent,
         SidebarComponent,
-        NopagefoudComponent
+        NopagefoudComponent,
+        ModalUploadComponent
     ],
     imports:[
         RouterModule, //Hay que importarlo para que se navegue correctamente entre los componentes que se encuentran aqui

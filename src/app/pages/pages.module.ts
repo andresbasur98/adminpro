@@ -40,7 +40,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
      DashboardComponent,
      ProgressComponent,
      Graficas1Component,
-     PagesComponent,
+    //  PagesComponent, (parte optimizaciones lo cargaremos desde otro lado) - app.module
      IncrementadorComponent,
      GraficoDonaComponent,
      AccountSettingsComponent,
@@ -48,7 +48,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
      RxjsComponent,
      ProfileComponent,
      UsuariosComponent,
-     ModalUploadComponent,
+    //  ModalUploadComponent, (parte optimizaciones lo cargaremos desde otro lado) - app.module
      HospitalComponent,
      MedicosComponent,
      MedicoComponent,
