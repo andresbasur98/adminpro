@@ -16,15 +16,17 @@ export class HospitalService {
 
   totalHospitales: number = 0;
   hospital: Hospital;
+  desde: number = 0;
 
   constructor(public http: HttpClient,
     public router: Router,
     public _subirArchivoService: SubirArchivoService,
     public _usuarioService: UsuarioService) { }
 
-  cargarHospitales(){
+  cargarHospitales(desde: number){
 
-    let url = URL_SERVICIOS + '/hospital';
+    let url = URL_SERVICIOS + '/hospital' +'?desde=' + desde;
+    this.desde = desde;
     return this.http.get(url)
         .pipe(
           map( (resp:any) =>{

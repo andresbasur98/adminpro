@@ -18,6 +18,8 @@ export class HospitalComponent implements OnInit {
   cargando: boolean;
   totalRegistros: number;
 
+  desde: number = 0;
+
   constructor(
     public _hospitalService: HospitalService,
     public _modalUploadService: ModalUploadService
@@ -43,11 +45,26 @@ export class HospitalComponent implements OnInit {
           
   }
 
+  cambiarDesde(valor: number){
+    let desde = this.desde + valor;
+
+    if( desde >= this.totalRegistros){
+      return;
+    }
+    if( desde < 0){
+      return;
+    }
+
+    this.desde += valor;
+    this.cargarHospitales();
+
+  }
+
   cargarHospitales(){
 
     this.cargando = true;
 
-   return this._hospitalService.cargarHospitales( )
+   return this._hospitalService.cargarHospitales( this.desde )
         .subscribe((hospitales:any) => this.hospitales = hospitales);
   }
 

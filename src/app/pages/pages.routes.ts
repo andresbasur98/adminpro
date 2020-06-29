@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,6 +13,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { MedicosComponent } from './medicos/medicos.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AdminGuard } from '../services/guards/admin.guard';
 
 
 
@@ -30,9 +32,13 @@ const pagesRoutes: Routes = [
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' } },
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'}},
+            { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador'}},
             
             //Mantenimientos
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de Usuarios'}},
+            {
+                 path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de Usuarios'},
+                 canActivate: [ AdminGuard]
+            },
             { path: 'hospitales', component: HospitalComponent, data: { titulo: 'Mantenimiento de Hospitales'}},
             { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento de Medicos'}},
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Crear Medico'}},
